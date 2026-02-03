@@ -1,53 +1,64 @@
-import { useState } from 'react'
+import { Clock3, MousePointer2, RotateCw, Waves } from 'lucide-react'
 import './Slide07.css'
 
-const transitions = [
-  { id: 'expand', label: 'Card expand' },
-  { id: 'slide', label: 'Page slide' },
-  { id: 'fade', label: 'Fade-through' }
-]
-
 export default function Slide07() {
-  const [mode, setMode] = useState('expand')
-  const [runId, setRunId] = useState(0)
-
-  const play = (nextMode) => {
-    setMode(nextMode)
-    setRunId((value) => value + 1)
-  }
-
   return (
     <section className="slide-layout slide07">
-      <div className="speaker-line">
-        Structural motion reveals app structure.
-      </div>
+      <div className="speaker-line">Interaction design anatomy.</div>
       <div className="slide-header">
-        <h2 className="slide-title">Structural Motion Examples</h2>
+        <h2 className="slide-title">Interaction Design Anatomy</h2>
         <p className="slide-subtitle">
-          Struktur blir tydelig når elementer utvider seg, bytter kontekst og
-          viser hvor man er på vei.
+          Fire byggesteiner som former hver interaksjon i et grensesnitt.
         </p>
       </div>
-      <ul className="slide-list">
-        <li>Tabs and swipes</li>
-        <li>List items expanding</li>
-        <li>Cards drilling into detail</li>
-      </ul>
-      <div className="slide-actions">
-        {transitions.map((option) => (
-          <button
-            key={option.id}
-            type="button"
-            className="slide-button"
-            onClick={() => play(option.id)}
-          >
-            {option.label}
-          </button>
-        ))}
-      </div>
-      <div className={`slide07-stage mode-${mode}`}>
-        <div key={runId} className="slide07-card">
-          Context
+      <div className="slide07-grid">
+        <div className="slide07-card">
+          <div className="slide07-card-title">
+            <span className="slide07-icon">
+              <MousePointer2 />
+            </span>
+            Interaction Trigger
+          </div>
+          <ul>
+            <li>What causes the animation</li>
+            <li>Mouse over, tap, swipe, scroll, page load</li>
+          </ul>
+        </div>
+        <div className="slide07-card">
+          <div className="slide07-card-title">
+            <span className="slide07-icon">
+              <RotateCw />
+            </span>
+            Response
+          </div>
+          <ul>
+            <li>What happens once triggered</li>
+            <li>Move, flip, fade, change color, grow/shrink</li>
+          </ul>
+        </div>
+        <div className="slide07-card">
+          <div className="slide07-card-title">
+            <span className="slide07-icon">
+              <Clock3 />
+            </span>
+            Timing
+          </div>
+          <ul>
+            <li>Duration (how long it takes)</li>
+            <li>Delay (how long after trigger)</li>
+          </ul>
+        </div>
+        <div className="slide07-card">
+          <div className="slide07-card-title">
+            <span className="slide07-icon">
+              <Waves />
+            </span>
+            Easing
+          </div>
+          <ul>
+            <li>The physics of the animation</li>
+            <li>Smoothness</li>
+          </ul>
         </div>
       </div>
     </section>

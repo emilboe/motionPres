@@ -1,30 +1,45 @@
-.slide10-controls {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.slide10-chip {
-  border: 1px solid var(--tieto-light);
-  background: var(--tieto-dark);
-  color: var(--tieto-white-smoke);
-  border-radius: 999px;
-  padding: 8px 16px;
-  cursor: pointer;
-  font-weight: 600;
-}
-
-.slide10-chip.is-active {
-  background: var(--tieto-yellow);
-  color: var(--tieto-dark);
-}
-
-.slide10-contract {
+.slide10-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(260px, 1fr));
+  gap: 32px;
   margin-top: 16px;
-  border: 1px solid var(--tieto-light);
-  background: var(--tieto-deep);
+}
+
+.slide10-card {
+  display: grid;
+  gap: 12px;
+}
+
+.slide10-thumb {
   border-radius: 16px;
-  padding: 18px;
-  color: var(--tieto-white-smoke);
-  max-width: 520px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  height: 220px;
+  display: grid;
+  place-items: center;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
+
+.slide10-meta {
+  display: grid;
+  gap: 6px;
+}
+
+.slide10-title {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.slide10-caption {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+}
+
+@media (max-width: 900px) {
+  .slide10-grid {
+    grid-template-columns: 1fr;
+  }
 }

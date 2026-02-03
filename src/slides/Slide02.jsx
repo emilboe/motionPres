@@ -67,20 +67,19 @@ export default function Slide02() {
             <li>Success &amp; failure states</li>
             <li>Moments of delight</li>
           </ul>
-          <button
-            type="button"
-            className="slide02-toggle"
-            onClick={() => setIsLight((value) => !value)}
-          >
-            <span className="toggle-sky">
-              <span className="toggle-sun" />
-              <span className="toggle-moon" />
-              <span className="toggle-cloud" />
+          <label className="slide02-switch" htmlFor="checkboxSwitch">
+            <input
+              type="checkbox"
+              name="mode"
+              id="checkboxSwitch"
+              checked={!isLight}
+              onChange={(event) => setIsLight(!event.target.checked)}
+              aria-label="Toggle light or dark mode"
+            />
+            <span className="slide02-switch-label">
+              {isLight ? 'Light mode' : 'Dark mode'}
             </span>
-            <span className="toggle-label">
-              {isLight ? 'Dark mode' : 'Light mode'}
-            </span>
-          </button>
+          </label>
         </div>
       </div>
     </section>

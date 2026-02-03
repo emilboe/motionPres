@@ -76,94 +76,107 @@
   display: inline-block;
 }
 
-.slide02-toggle {
+.slide02-switch {
   margin-top: 12px;
-  border: none;
-  background: transparent;
   display: inline-flex;
   flex-direction: column;
   gap: 10px;
   align-items: flex-start;
   color: inherit;
+}
+
+.slide02-switch input[type='checkbox'] {
+  --switch-height: 60px;
+  --border: 4px;
+  --border-color: #439bb8;
+  --bg-color: #87ceeb;
+  --tip-color: #f9d71c;
+  --border-checked-color: #345;
+  --bg-checked-color: #789;
+  --tip-checked-color: #fff;
+  transition: 0.3s ease;
+  -webkit-appearance: none;
+  appearance: none;
+  height: var(--switch-height);
+  width: calc(var(--switch-height) * 2);
+  background-color: var(--bg-color);
+  border: solid var(--border) var(--border-color);
+  border-radius: calc(var(--switch-height) * 2);
+  background-image:
+    radial-gradient(
+      calc(var(--switch-height) * 0.21) circle at
+        calc(var(--switch-height) * 1.116) calc(var(--switch-height) * 0.36666),
+      white,
+      white 66%,
+      transparent 66%
+    ),
+    radial-gradient(
+      calc(var(--switch-height) * 0.3333) circle at
+        calc(var(--switch-height) * 1.3333) calc(var(--switch-height) * 0.3),
+      white,
+      white 66%,
+      transparent 66%
+    ),
+    radial-gradient(
+      calc(var(--switch-height) * 0.2) circle at
+        calc(var(--switch-height) * 1.5833) calc(var(--switch-height) * 0.3833),
+      white,
+      white 66%,
+      transparent 66%
+    ),
+    radial-gradient(
+      calc(var(--switch-height) * 0.5) calc(var(--switch-height) * 0.0833)
+        ellipse at
+        calc(var(--switch-height) * 1.3333) calc(var(--switch-height) * 0.5),
+      white,
+      white 45%,
+      transparent 66%
+    );
   cursor: pointer;
-}
-
-.toggle-sky {
   position: relative;
-  width: 120px;
-  height: 48px;
-  border-radius: 999px;
-  border: 1px solid var(--tieto-light);
-  background: var(--tieto-light);
-  overflow: hidden;
-  transition: background 300ms ease;
 }
 
-.slide02.is-light .toggle-sky {
-  background: var(--tieto-light);
+.slide02-switch input[type='checkbox']::before {
+  transition: ease 0.3s;
+  left: 0;
+  display: block;
+  height: calc(var(--switch-height) - 2 * var(--border));
+  width: calc(var(--switch-height) - 2 * var(--border));
+  position: relative;
+  background-color: var(--tip-color);
+  content: '';
+  border-radius: calc(var(--switch-height) - 2 * var(--border));
+  box-shadow: 0 0 calc(var(--switch-height) * 0.3333) yellow,
+    0 0 calc(var(--switch-height) * 0.1666) white;
 }
 
-.toggle-sun,
-.toggle-moon,
-.toggle-cloud {
-  position: absolute;
-  top: 10px;
-  height: 28px;
-  width: 28px;
-  border-radius: 50%;
-  transition: transform 320ms ease, opacity 320ms ease;
+.slide02-switch input[type='checkbox']:checked {
+  background-color: var(--bg-checked-color);
+  border-color: var(--border-checked-color);
+  background-image:
+    radial-gradient(3px circle at 23px 14px, white, white 45%, transparent 66%),
+    radial-gradient(2px circle at 34px 25px, white, white 45%, transparent 66%),
+    radial-gradient(3px circle at 12px 36px, white, white 45%, transparent 66%),
+    radial-gradient(3px circle at 52px 32px, white, white 45%, transparent 66%),
+    radial-gradient(3px circle at 23px 14px, white, white 45%, transparent 66%),
+    radial-gradient(2px circle at 43px 16px, white, white 45%, transparent 66%);
 }
 
-.toggle-sun {
-  left: 14px;
-  background: var(--tieto-yellow);
+.slide02-switch input[type='checkbox']:checked::before {
+  left: var(--switch-height);
+  background-color: var(--tip-checked-color);
+  background-image:
+    radial-gradient(15px circle at 23px 15px, #888, #888 45%, transparent 66%),
+    radial-gradient(4px circle at 36px 21px, #888, #888 23%, transparent 66%),
+    radial-gradient(7px circle at 25px 32px, #888, #888 34%, transparent 66%);
+  box-shadow: 0 0 8px white, 0 0 10px white;
 }
 
-.toggle-moon {
-  right: 14px;
-  background: var(--tieto-white-smoke);
-  opacity: 0;
+.slide02-switch input[type='checkbox']:focus {
+  outline: none;
 }
 
-.toggle-cloud {
-  left: 48px;
-  top: 18px;
-  height: 14px;
-  width: 28px;
-  border-radius: 999px;
-  background: var(--tieto-white-smoke);
-}
-
-.slide02.is-light .toggle-sun {
-  transform: translateX(0);
-  opacity: 1;
-}
-
-.slide02.is-light .toggle-moon {
-  opacity: 0;
-  transform: translateX(0);
-}
-
-.slide02.is-light .toggle-cloud {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.slide02:not(.is-light) .toggle-sky {
-  background: var(--tieto-deep);
-}
-
-.slide02:not(.is-light) .toggle-sun {
-  transform: translateX(40px);
-  opacity: 0;
-}
-
-.slide02:not(.is-light) .toggle-moon {
-  opacity: 1;
-  transform: translateX(-18px);
-}
-
-.slide02:not(.is-light) .toggle-cloud {
-  opacity: 0.2;
-  transform: translateY(6px);
+.slide02-switch-label {
+  font-size: 14px;
+  color: inherit;
 }

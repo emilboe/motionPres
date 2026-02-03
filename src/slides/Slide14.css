@@ -1,0 +1,45 @@
+.slide14-stage {
+  height: 120px;
+  width: min(520px, 90vw);
+  border-radius: 18px;
+  border: 1px solid var(--tieto-light);
+  background: var(--tieto-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.slide14-dot {
+  position: absolute;
+  top: 44px;
+  left: 20px;
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  background: var(--tieto-yellow);
+}
+
+.slide14-stage.mode-react-motion .slide14-dot {
+  animation: reactMotion 1.1s ease-out forwards;
+}
+
+.slide14-stage.mode-framer .slide14-dot {
+  animation: framerMotion 1s cubic-bezier(0.2, 1.6, 0.4, 1) forwards;
+}
+
+@keyframes reactMotion {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(440px);
+  }
+}
+
+@keyframes framerMotion {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(440px);
+  }
+}

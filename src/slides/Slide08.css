@@ -1,0 +1,85 @@
+.slide08-stage {
+  width: min(520px, 90vw);
+  min-height: 140px;
+  border-radius: 18px;
+  border: 1px solid var(--tieto-light);
+  background: var(--tieto-dark);
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+.slide08-skeleton {
+  width: 100%;
+  display: grid;
+  gap: 12px;
+}
+
+.slide08-skeleton div {
+  height: 14px;
+  border-radius: 999px;
+  background: var(--tieto-deep);
+}
+
+.slide08-shimmer {
+  width: 100%;
+  height: 20px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    var(--tieto-deep) 0%,
+    var(--tieto-light) 50%,
+    var(--tieto-deep) 100%
+  );
+  animation: shimmer 1.2s ease-in-out infinite;
+}
+
+.slide08-spinner {
+  height: 42px;
+  width: 42px;
+  border-radius: 50%;
+  border: 4px solid var(--tieto-light);
+  border-top-color: var(--tieto-yellow);
+  animation: spin 0.9s linear infinite;
+}
+
+.slide08-progress {
+  width: 100%;
+  height: 16px;
+  border-radius: 999px;
+  background: var(--tieto-deep);
+  overflow: hidden;
+}
+
+.slide08-progress-fill {
+  height: 100%;
+  background: var(--tieto-yellow);
+  animation: progressFill 2s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: 200px 0;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes progressFill {
+  0% {
+    width: 10%;
+  }
+  50% {
+    width: 70%;
+  }
+  100% {
+    width: 20%;
+  }
+}

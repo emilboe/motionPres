@@ -1,0 +1,70 @@
+@use 'sass:math';
+.slide17 {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  z-index: 2;
+
+  .parallax {
+    perspective: 1000px;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    position: relative;
+    border-radius: 0;
+    border: none;
+    background: var(--tieto-dark);
+  }
+
+  .parallax__layer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform-origin: bottom center;
+    --offset: 2000px;
+    transform: translate3d(0, var(--offset), 0);
+
+    img {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .parallax__cover {
+    position: absolute;
+    top: 97%;
+    left: 0;
+    right: 0;
+    height: 400vh;
+    z-index: 10;
+    background: #2d112b;
+    color: var(--tieto-white-smoke);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 12vh;
+    text-transform: uppercase;
+    letter-spacing: 0.4em;
+    font-size: 14px;
+  }
+}
+
+$parallax__layers: 6;
+
+@for $i from 0 through $parallax__layers {
+  $x: math.div($parallax__layers - $i, 2);
+  .parallax__layer__#{$i} {
+    transform: translate3d(0, var(--offset), 0)
+      translateZ(-100 * $x#{px})
+      scale($x + 1);
+  }
+}
+

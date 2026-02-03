@@ -1,0 +1,169 @@
+.slide02 {
+  color: var(--tieto-white-smoke);
+}
+
+.slide02.is-light {
+  color: var(--tieto-dark);
+}
+
+.slide02-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 32px;
+  margin-top: 12px;
+}
+
+.slide02-column h3 {
+  font-size: 22px;
+  margin-bottom: 12px;
+  color: inherit;
+}
+
+.slide02-column ul {
+  list-style: none;
+  display: grid;
+  gap: 8px;
+  color: inherit;
+  opacity: 0.8;
+  margin-bottom: 16px;
+}
+
+.slide02-column li::before {
+  content: '•';
+  margin-right: 10px;
+  color: var(--tieto-yellow);
+}
+
+.slide02-send {
+  position: relative;
+  border: none;
+  background: var(--tieto-blue);
+  color: var(--tieto-white-smoke);
+  border-radius: 12px;
+  padding: 12px 22px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 140ms ease, background 140ms ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.slide02-send:hover {
+  transform: translateY(-2px);
+}
+
+.slide02-send.loading {
+  background: var(--tieto-indigo);
+}
+
+.slide02-send.sent {
+  background: var(--tieto-yellow);
+  color: var(--tieto-dark);
+}
+
+.slide02-send .spinner {
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-top-color: currentColor;
+  animation: spin 0.8s linear infinite;
+  display: none;
+}
+
+.slide02-send.loading .spinner {
+  display: inline-block;
+}
+
+.slide02-toggle {
+  margin-top: 12px;
+  border: none;
+  background: transparent;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  color: inherit;
+  cursor: pointer;
+}
+
+.toggle-sky {
+  position: relative;
+  width: 120px;
+  height: 48px;
+  border-radius: 999px;
+  border: 1px solid var(--tieto-light);
+  background: var(--tieto-light);
+  overflow: hidden;
+  transition: background 300ms ease;
+}
+
+.slide02.is-light .toggle-sky {
+  background: var(--tieto-light);
+}
+
+.toggle-sun,
+.toggle-moon,
+.toggle-cloud {
+  position: absolute;
+  top: 10px;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  transition: transform 320ms ease, opacity 320ms ease;
+}
+
+.toggle-sun {
+  left: 14px;
+  background: var(--tieto-yellow);
+}
+
+.toggle-moon {
+  right: 14px;
+  background: var(--tieto-white-smoke);
+  opacity: 0;
+}
+
+.toggle-cloud {
+  left: 48px;
+  top: 18px;
+  height: 14px;
+  width: 28px;
+  border-radius: 999px;
+  background: var(--tieto-white-smoke);
+}
+
+.slide02.is-light .toggle-sun {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.slide02.is-light .toggle-moon {
+  opacity: 0;
+  transform: translateX(0);
+}
+
+.slide02.is-light .toggle-cloud {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slide02:not(.is-light) .toggle-sky {
+  background: var(--tieto-deep);
+}
+
+.slide02:not(.is-light) .toggle-sun {
+  transform: translateX(40px);
+  opacity: 0;
+}
+
+.slide02:not(.is-light) .toggle-moon {
+  opacity: 1;
+  transform: translateX(-18px);
+}
+
+.slide02:not(.is-light) .toggle-cloud {
+  opacity: 0.2;
+  transform: translateY(6px);
+}

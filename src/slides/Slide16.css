@@ -1,0 +1,81 @@
+.slide16-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.slide16-stage {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.slide16-chip {
+  height: 80px;
+  width: 80px;
+  border-radius: 20px;
+  border: 1px solid var(--tieto-light);
+  background: var(--tieto-dark);
+  color: var(--tieto-white-smoke);
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.slide16-chip.is-pulsing {
+  animation: slide16Pulse 1.4s ease-in-out infinite;
+}
+
+.slide16-chip.is-bouncing {
+  animation: slide16Bounce 0.9s ease-in-out infinite;
+}
+
+.slide16-chip.is-glowing {
+  animation: slide16Glow 1.6s ease-in-out infinite;
+}
+
+.slide16-chip.is-sliding {
+  animation: slide16Slide 1.2s ease-in-out infinite;
+}
+
+@keyframes slide16Pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+@keyframes slide16Bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes slide16Glow {
+  0%,
+  100% {
+    background: var(--tieto-dark);
+  }
+  50% {
+    background: var(--tieto-blue);
+  }
+}
+
+@keyframes slide16Slide {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(16px);
+  }
+}

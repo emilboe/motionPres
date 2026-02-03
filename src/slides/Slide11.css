@@ -1,0 +1,40 @@
+.slide11-badge {
+  border: 1px solid var(--tieto-light);
+  border-radius: 999px;
+  padding: 14px 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  background: var(--tieto-dark);
+  color: var(--tieto-white-smoke);
+  width: fit-content;
+}
+
+.slide11.mode-formal .slide11-badge {
+  animation: formalPulse 2.2s ease-in-out infinite;
+}
+
+.slide11.mode-playful .slide11-badge {
+  animation: playfulBounce 0.8s ease-in-out infinite;
+}
+
+@keyframes formalPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+@keyframes playfulBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}

@@ -1,0 +1,43 @@
+.slide05-stage {
+  height: 140px;
+  width: min(520px, 90vw);
+  border-radius: 18px;
+  border: 1px solid var(--tieto-light);
+  background: var(--tieto-dark);
+  display: grid;
+  place-items: center;
+}
+
+.slide05-square {
+  height: 60px;
+  width: 60px;
+  border-radius: 12px;
+  background: var(--tieto-yellow);
+  animation: tastefulPulse 1.6s ease-in-out infinite;
+}
+
+.slide05-square.is-chaotic {
+  animation: chaoticSpin 0.6s ease-in-out infinite;
+}
+
+@keyframes tastefulPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+@keyframes chaoticSpin {
+  0% {
+    transform: translateX(-50px) rotate(0deg);
+  }
+  50% {
+    transform: translateX(50px) rotate(25deg);
+  }
+  100% {
+    transform: translateX(-50px) rotate(-25deg);
+  }
+}

@@ -1,0 +1,21 @@
+.title-slide {
+  align-items: flex-start;
+  justify-content: center;
+  gap: 32px;
+}
+
+.title-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.title-text {
+  font-size: clamp(36px, 5vw, 70px);
+  color: var(--tieto-white-smoke);
+}
+
+.title-subtext {
+  font-size: clamp(22px, 2.8vw, 36px);
+  color: var(--tieto-yellow);
+}

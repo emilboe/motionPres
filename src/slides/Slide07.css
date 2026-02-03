@@ -1,0 +1,61 @@
+.slide07-stage {
+  height: 140px;
+  width: min(520px, 90vw);
+  border-radius: 18px;
+  border: 1px solid var(--tieto-light);
+  background: var(--tieto-dark);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.slide07-card {
+  height: 90px;
+  width: 180px;
+  border-radius: 16px;
+  background: var(--tieto-blue);
+  color: var(--tieto-white-smoke);
+  display: grid;
+  place-items: center;
+}
+
+.slide07-stage.mode-expand .slide07-card {
+  animation: expandCard 0.8s ease-out forwards;
+}
+
+.slide07-stage.mode-slide .slide07-card {
+  animation: slidePage 0.8s ease-out forwards;
+}
+
+.slide07-stage.mode-fade .slide07-card {
+  animation: fadeThrough 0.8s ease-out forwards;
+}
+
+@keyframes expandCard {
+  0% {
+    transform: scale(0.6);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes slidePage {
+  0% {
+    transform: translateX(-160px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeThrough {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

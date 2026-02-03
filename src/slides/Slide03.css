@@ -1,0 +1,44 @@
+.slide03-track {
+  position: relative;
+  height: 16px;
+  width: min(520px, 90vw);
+  border-radius: 999px;
+  background: var(--tieto-dark);
+  border: 1px solid var(--tieto-light);
+  overflow: hidden;
+}
+
+.slide03-dot {
+  position: absolute;
+  top: -8px;
+  left: 10px;
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  background: var(--tieto-yellow);
+  transition: transform 1200ms ease-out;
+}
+
+.slide03-track.is-right .slide03-dot {
+  transform: translateX(460px);
+}
+
+.slide03-dot.easing-linear {
+  transition-timing-function: linear;
+}
+
+.slide03-dot.easing-ease-in {
+  transition-timing-function: cubic-bezier(0.5, 0, 0.9, 0.4);
+}
+
+.slide03-dot.easing-ease-both {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slide03-dot.easing-ease-out {
+  transition-timing-function: cubic-bezier(0.1, 0.6, 0.2, 1);
+}
+
+.slide03-dot.easing-spring {
+  transition-timing-function: cubic-bezier(0.2, 1.6, 0.4, 1);
+}

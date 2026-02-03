@@ -1,0 +1,46 @@
+.slide13-stage {
+  height: 140px;
+  width: min(520px, 90vw);
+  border-radius: 18px;
+  border: 1px solid var(--tieto-light);
+  background: var(--tieto-dark);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.slide13-card {
+  height: 90px;
+  width: 200px;
+  border-radius: 16px;
+  background: var(--tieto-blue);
+  color: var(--tieto-white-smoke);
+  display: grid;
+  place-items: center;
+}
+
+.slide13-stage.mode-smart .slide13-card {
+  animation: smartAnimate 0.8s ease-out forwards;
+}
+
+.slide13-stage.mode-instant .slide13-card {
+  animation: instantAnimate 0.2s linear forwards;
+}
+
+@keyframes smartAnimate {
+  0% {
+    transform: scale(0.8) translateY(12px);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes instantAnimate {
+  0% {
+    transform: scale(1) translateY(0);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+  }
+}

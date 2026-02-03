@@ -1,0 +1,30 @@
+.slide10-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.slide10-chip {
+  border: 1px solid var(--tieto-light);
+  background: var(--tieto-dark);
+  color: var(--tieto-white-smoke);
+  border-radius: 999px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.slide10-chip.is-active {
+  background: var(--tieto-yellow);
+  color: var(--tieto-dark);
+}
+
+.slide10-contract {
+  margin-top: 16px;
+  border: 1px solid var(--tieto-light);
+  background: var(--tieto-deep);
+  border-radius: 16px;
+  padding: 18px;
+  color: var(--tieto-white-smoke);
+  max-width: 520px;
+}

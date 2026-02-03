@@ -1,0 +1,13 @@
+.slide09-tokens {
+  display: grid;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.slide09-token {
+  border: 1px solid var(--tieto-light);
+  border-radius: 12px;
+  padding: 12px 16px;
+  background: var(--tieto-dark);
+  color: var(--tieto-white-smoke);
+}

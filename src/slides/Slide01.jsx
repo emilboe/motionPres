@@ -4,11 +4,11 @@ export default function Slide01() {
   return (
     <section className="slide-layout slide01">
       <div className="speaker-line">
-        Intro: why motion matters.
+        Why motion matters
       </div>
       <div className="slide-header">
         <h2 className="slide-title slide01-title">
-          <span>Benefits:</span> Motion and Interactive Prototyping
+          Benefits of motion
         </h2>
         <p className="slide-subtitle">
           Et raskt overblikk over hvorfor motion og prototyping gjør design mer

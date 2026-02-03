@@ -16,8 +16,9 @@ const SRC_DOC = String.raw`<!doctype html>
 
       body {
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
+        padding-left: 48px;
       }
 
       * {

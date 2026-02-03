@@ -2,49 +2,47 @@ import { useState } from 'react'
 import './Slide14.css'
 
 export default function Slide14() {
-  const [mode, setMode] = useState('react-motion')
-  const [runId, setRunId] = useState(0)
+  const [open, setOpen] = useState(false)
+  const [closing, setClosing] = useState(false)
 
-  const play = (nextMode) => {
-    setMode(nextMode)
-    setRunId((value) => value + 1)
+  const handleToggle = () => {
+    if (open) {
+      setClosing(true)
+      setTimeout(() => {
+        setOpen(false)
+        setClosing(false)
+      }, 360)
+    } else {
+      setOpen(true)
+    }
   }
 
   return (
     <section className="slide-layout slide14">
       <div className="speaker-line">
-        Choose tools based on the interaction.
+        Elastic motion adds playful energy.
       </div>
       <div className="slide-header">
-        <h2 className="slide-title">UI Motion Tools</h2>
+        <h2 className="slide-title">Elastic (Spring) Motion</h2>
         <p className="slide-subtitle">
-          Verktøyvalg handler om behov: drag/scroll, høy fidelity, eller rask
-          validering.
+          Klikk hovedknappen for å sprette frem flere valg med stagger.
         </p>
       </div>
-      <ul className="slide-list">
-        <li>Flinto, Principle, Studio</li>
-        <li>After Effects = non-interactive</li>
-        <li>Pick the simplest tool to validate</li>
-      </ul>
-      <div className="slide-actions">
+      <div
+        className={`slide14-stage ${open ? 'is-open' : ''} ${
+          closing ? 'is-closing' : ''
+        }`}
+      >
         <button
           type="button"
-          className="slide-button"
-          onClick={() => play('react-motion')}
+          className="slide14-main"
+          onClick={handleToggle}
         >
-          Principle
+          +
         </button>
-        <button
-          type="button"
-          className="slide-button"
-          onClick={() => play('framer')}
-        >
-          Studio
-        </button>
-      </div>
-      <div className={`slide14-stage mode-${mode}`}>
-        <div key={runId} className="slide14-dot" />
+        <div className="slide14-option slide14-option--1">Photo</div>
+        <div className="slide14-option slide14-option--2">Post</div>
+        <div className="slide14-option slide14-option--3">Share</div>
       </div>
     </section>
   )

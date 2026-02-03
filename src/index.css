@@ -48,17 +48,17 @@ button {
 .speaker-line {
   text-transform: uppercase;
   letter-spacing: 0.18em;
-  font-size: 12px;
+  font-size: 15px;
   color: var(--tieto-light);
 }
 
 .slide-title {
-  font-size: clamp(32px, 4.4vw, 56px);
+  font-size: clamp(40px, 4.8vw, 64px);
   color: var(--tieto-white-smoke);
 }
 
 .slide-subtitle {
-  font-size: 18px;
+  font-size: 22px;
   line-height: 1.6;
   color: var(--tieto-white-smoke);
   max-width: 900px;
@@ -68,7 +68,7 @@ button {
   list-style: none;
   display: grid;
   gap: 12px;
-  font-size: 20px;
+  font-size: 24px;
   color: var(--tieto-white-smoke);
 }
 

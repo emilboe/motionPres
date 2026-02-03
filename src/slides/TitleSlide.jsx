@@ -7,7 +7,7 @@ export default function TitleSlide() {
       Secret text
       </div>
       <div className="title-block">
-        <h1 className="title-text">UI Animation, Motion Design & Micro Interaction 101</h1>
+        <h1 className="title-text">Motion Design & Mikrointeraksjoner i UX</h1>
         <p className="title-subtext">"Motion is communication."</p>
       </div>
       <p className="slide-subtitle">

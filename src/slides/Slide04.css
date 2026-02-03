@@ -1,31 +1,100 @@
-.slide04-stage {
-  position: relative;
-  height: 120px;
-  width: min(520px, 90vw);
-  border-radius: 18px;
-  border: 1px solid var(--tieto-light);
-  background: var(--tieto-dark);
-  overflow: hidden;
+.slide04-container {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  margin-top: 8px;
 }
 
-.slide04-card {
-  position: absolute;
-  top: 24px;
-  left: 24px;
-  height: 72px;
-  width: 120px;
-  border-radius: 14px;
-  background: var(--tieto-blue);
-  color: var(--tieto-white-smoke);
-  display: grid;
-  place-items: center;
-  transition: transform 600ms ease;
+.slide04-static {
+  width: 320px;
+  height: 400px;
 }
 
-.slide04-card.is-right {
-  transform: translateX(320px);
+.slide04-item-content.is-static {
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 2px 0px;
+  transform: none;
 }
 
-.slide04-stage.mode-teleport .slide04-card {
+.slide04-list--static .slide04-item {
   transition: none;
+  cursor: default;
+}
+
+.slide04-item--static.is-dragging .slide04-item-content {
+  transform: none;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 2px 0px;
+}
+
+.slide04-item--static.is-dragging .slide04-item-content,
+.slide04-item--static.is-dragging .slide04-item-content.is-static {
+  transform: none;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 2px 0px;
+}
+
+.slide04-list--static .slide04-item.is-dragging .slide04-item-content {
+  transform: none;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 2px 0px;
+}
+
+.slide04-list {
+  position: relative;
+  width: 320px;
+  height: 400px;
+}
+
+.slide04-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 90px;
+  width: 100%;
+  transition: transform 240ms ease;
+  cursor: grab;
+}
+
+.slide04-item.is-dragging {
+  z-index: 5;
+  cursor: grabbing;
+  transition: none;
+}
+
+.slide04-item-content {
+  height: 100%;
+  border-radius: 8px;
+  color: var(--tieto-dark);
+  line-height: 90px;
+  padding-left: 32px;
+  font-size: 22px;
+  font-weight: 500;
+  background-color: var(--tieto-white-smoke);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 2px 0px;
+  transition: transform 320ms ease, box-shadow 320ms ease;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  user-select: none;
+}
+
+.slide04-item.is-dragging .slide04-item-content {
+  transform: scale(1.04);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 16px 32px 0px;
+}
+
+.slide04-order {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--tieto-light);
+  font-weight: 600;
+}
+
+.slide04-label {
+  flex: 1;
+}
+
+.slide04-grip {
+  color: var(--tieto-light);
+  letter-spacing: 2px;
+  margin-right: 16px;
+  font-size: 20px;
 }

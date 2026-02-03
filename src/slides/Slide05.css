@@ -1,43 +1,223 @@
-.slide05-stage {
-  height: 140px;
-  width: min(520px, 90vw);
-  border-radius: 18px;
-  border: 1px solid var(--tieto-light);
-  background: var(--tieto-dark);
+.slide05-container {
+  background: #ededed;
+  border-radius: 28px;
+  padding: 24px 20px;
+  width: 520px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  color: #2a2a2a;
+}
+
+.transaction-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.transaction {
+  display: grid;
+  grid-template-columns: 52px 1fr auto;
+  align-items: center;
+  gap: 16px;
+  padding: 6px 8px;
+  border-radius: 16px;
+  cursor: pointer;
+  background: transparent;
+  height: 88px;
+  overflow: hidden;
+  transition:
+    background 500ms ease,
+    transform 500ms ease,
+    opacity 500ms ease,
+    height 500ms ease;
+}
+
+.transaction.not-expanded {
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(8px) scale(0.98);
+  margin: 0;
+  padding: 0 8px;
+  pointer-events: none;
+  overflow: hidden;
+  transition:
+    max-height 500ms ease,
+    opacity 500ms ease,
+    transform 500ms ease,
+    padding 500ms ease,
+    margin 500ms ease;
+}
+
+.transaction.expanded {
+  position: relative;
+  background: #ffffff;
+  padding: 16px;
+  height: 320px;
+  grid-template-columns: 56px 1fr auto;
+  align-items: start;
+  row-gap: 8px;
+}
+
+.transaction.expanded .transaction-details,
+.transaction.expanded .payment-details {
+  display: flex;
+  animation: slide-up 280ms ease;
+}
+
+.transaction.expanded .details {
+  transform: translateY(-6px);
+}
+
+.icon-container {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  align-items: center;
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+  background: #2d2f33;
+  border-radius: 16px;
   display: grid;
   place-items: center;
 }
 
-.slide05-square {
-  height: 60px;
-  width: 60px;
-  border-radius: 12px;
-  background: var(--tieto-yellow);
-  animation: tastefulPulse 1.6s ease-in-out infinite;
+.icon svg {
+  width: 20px;
+  height: 20px;
+  color: white;
 }
 
-.slide05-square.is-chaotic {
-  animation: chaoticSpin 0.6s ease-in-out infinite;
+.details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex: 1;
+  width: 100%;
+  align-items: center;
+  gap: 12px;
+  transition: transform 500ms ease;
 }
 
-@keyframes tastefulPulse {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.08);
-  }
+.title-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
-@keyframes chaoticSpin {
-  0% {
-    transform: translateX(-50px) rotate(0deg);
+.title {
+  font-weight: 600;
+  color: #2a2a2a;
+  margin-bottom: 4px;
+  font-size: 18px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #8b8f97;
+}
+
+.amount {
+  font-weight: 500;
+  color: #8b8f97;
+  letter-spacing: 0.02em;
+}
+
+.transaction-details,
+.payment-details {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: #8b8f97;
+  border-top: 1px dotted #8b8f97;
+  padding-top: 10px;
+  width: 100%;
+  opacity: 0;
+  max-height: 0;
+  transform: translateY(8px);
+  transition: opacity 500ms ease, transform 500ms ease, max-height 500ms ease;
+}
+
+.transaction.expanded .transaction-details,
+.transaction.expanded .payment-details {
+  opacity: 1;
+  transform: translateY(0);
+  max-height: 120px;
+}
+
+.all-transactions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 16px 10px;
+  color: #2a2a2a;
+  font-weight: 600;
+  margin-top: 4px;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+}
+
+.slide05-container.expanded .all-transactions {
+  display: none;
+}
+
+.close-btn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: #f4f4f5;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  color: #18181b;
+}
+
+.transaction.expanded .close-btn {
+  display: flex;
+  margin-left: auto;
+}
+
+.transaction.expanded .icon-container {
+  justify-content: space-between;
+}
+
+.transaction.expanded .close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  margin-left: 0;
+  z-index: 2;
+}
+
+.transaction.expanded .details {
+  grid-column: 2 / 4;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.transaction.expanded .details .amount {
+  align-self: flex-start;
+}
+
+.transaction.expanded .details .amount {
+  padding-right: 40px;
+}
+
+.transaction.expanded .transaction-details,
+.transaction.expanded .payment-details {
+  grid-column: 2 / 4;
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
   }
-  50% {
-    transform: translateX(50px) rotate(25deg);
-  }
-  100% {
-    transform: translateX(-50px) rotate(-25deg);
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

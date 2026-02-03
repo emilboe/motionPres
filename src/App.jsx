@@ -1,5 +1,6 @@
 import SlideDeck from './components/SlideDeck.jsx'
 import TitleSlide from './slides/TitleSlide.jsx'
+import Slide00 from './slides/Slide00.jsx'
 import Slide01 from './slides/Slide01.jsx'
 import Slide02 from './slides/Slide02.jsx'
 import Slide03 from './slides/Slide03.jsx'
@@ -20,6 +21,7 @@ import Slide17 from './slides/Slide17.jsx'
 
 const slides = [
   TitleSlide,
+  Slide00,
   Slide01,
   Slide02,
   Slide03,

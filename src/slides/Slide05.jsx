@@ -461,7 +461,7 @@ const SRC_DOC = String.raw`<!doctype html>
 export default function Slide05() {
   return (
     <section className="slide-layout slide05">
-      <div className="speaker-line">Structural motion eksempel.</div>
+      <div className="speaker-line">Endre kontekst med bevegelser.</div>
       <div className="slide-header">
         <h2 className="slide-title">Strukturell motion eksempel</h2>
         <p className="slide-subtitle">

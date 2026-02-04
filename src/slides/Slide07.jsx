@@ -4,7 +4,7 @@ import './Slide07.css'
 export default function Slide07() {
   return (
     <section className="slide-layout slide07">
-      <div className="speaker-line">Interaksjonsanatomi.</div>
+      <div className="speaker-line">what that thang do.</div>
       <div className="slide-header">
         <h2 className="slide-title">Interaksjonsanatomi</h2>
         <p className="slide-subtitle">

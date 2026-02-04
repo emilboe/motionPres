@@ -27,7 +27,14 @@ export default function SlideDeck({ slides }) {
 
   return (
     <div className="deck">
-      <img className="deck-logo" src={logo} alt="Tieto logo" />
+      <button
+        type="button"
+        className="deck-logo-button"
+        onClick={() => setIndex(0)}
+        aria-label="Go to first slide"
+      >
+        <img className="deck-logo" src={logo} alt="Tieto logo" />
+      </button>
       <div className="slide" key={index}>
         <CurrentSlide />
       </div>

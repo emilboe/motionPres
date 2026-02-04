@@ -68,9 +68,9 @@ export default function Slide11() {
 
   return (
     <section className="slide-layout slide11">
-      <div className="speaker-line">Common easing curves.</div>
+      <div className="speaker-line">Smooth moves</div>
       <div className="slide-header">
-        <h2 className="slide-title">Common Easing Curves</h2>
+        <h2 className="slide-title">Vanligste Easing Curves</h2>
         <p className="slide-subtitle">
           Velg en kurve og se Tieto-logoen bevege seg over skjermen.
         </p>

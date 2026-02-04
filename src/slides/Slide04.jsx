@@ -65,10 +65,10 @@ export default function Slide04() {
   return (
     <section className="slide-layout slide04">
       <div className="speaker-line">
-        Functional motion improves usability.
+        Funksjonell motion forbedrer brukbarheten.
       </div>
       <div className="slide-header">
-        <h2 className="slide-title">Functional Motion Eksempel</h2>
+        <h2 className="slide-title">Funksjonell Motion Eksempel</h2>
         <p className="slide-subtitle">
           Dra for å endre rekkefølge. Interaksjonen gir feedback og gjør det
           tydelig hva som skjer.

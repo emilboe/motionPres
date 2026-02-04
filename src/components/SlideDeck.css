@@ -12,12 +12,24 @@
 }
 
 .deck-logo {
+  height: 44px;
+  width: auto;
+}
+
+.deck-logo-button {
   position: absolute;
   top: 28px;
   left: 32px;
-  height: 44px;
-  width: auto;
   z-index: 3;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.deck-logo-button:hover .deck-logo {
+  filter: brightness(0) saturate(100%) invert(86%) sepia(67%) saturate(300%)
+    hue-rotate(12deg) brightness(105%) contrast(104%);
 }
 
 .slide {

@@ -54,7 +54,7 @@ export default function Slide12() {
   return (
     <section className="slide-layout slide12">
       <div className="speaker-line">
-        Linear easing example.
+        boring ahh slider.
       </div>
       <div className="slide-header">
         <h2 className="slide-title">Linear</h2>

@@ -11,8 +11,6 @@ import Slide11 from './slides/Slide11.jsx'
 import Slide12 from './slides/Slide12.jsx'
 import Slide13 from './slides/Slide13.jsx'
 import Slide14 from './slides/Slide14.jsx'
-import Slide15 from './slides/Slide15.jsx'
-import Slide16 from './slides/Slide16.jsx'
 import Slide17 from './slides/Slide17.jsx'
 
 const slides = [
@@ -28,8 +26,6 @@ const slides = [
   Slide12,
   Slide13,
   Slide14,
-  Slide15,
-  Slide16,
   Slide17
 ]
 

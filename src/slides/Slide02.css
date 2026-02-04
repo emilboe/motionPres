@@ -146,41 +146,65 @@
 }
 
 .slide02-modal-card {
-  width: min(420px, 90vw);
+  width: min(900px, 92vw);
+  height: min(900px, 92vh);
   background: var(--tieto-dark);
   color: var(--tieto-white-smoke);
   border-radius: 18px;
-  padding: 24px;
+  padding: 28px;
   border: 1px solid rgba(255, 255, 255, 0.12);
-  transform: translateY(28px) scale(0.92);
-  transition: transform 320ms ease;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-.slide02-modal.is-open .slide02-modal-card {
-  transform: translateY(0) scale(1);
+.slide02-modal.variant-a .slide02-modal-card {
+  transform: translateY(140px) scale(0.8);
+  opacity: 0;
+}
+
+.slide02-modal.variant-a.is-open .slide02-modal-card {
+  animation: slide02ModalRise 220ms ease-out both;
 }
 
 .slide02-modal.variant-b .slide02-modal-card {
   transform: none;
   transition: none;
+  opacity: 1;
 }
 
 .slide02-modal.variant-b.is-open .slide02-modal-card {
   transform: none;
 }
 
-.slide02-modal-title {
-  font-size: 20px;
-  margin-bottom: 8px;
+@keyframes slide02ModalRise {
+  from {
+    opacity: 0;
+    transform: translateY(90px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
-.slide02-modal-card p {
-  opacity: 0.8;
-  line-height: 1.5;
-  margin-bottom: 16px;
+.slide02-modal-media {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  flex: 1;
+}
+
+.slide02-modal-media video {
+  width: 100%;
+  height: 90%;
+  border-radius: 12px;
+  background: #000;
+  object-fit: cover;
 }
 
 .slide02-modal-close {
+  align-self: flex-end;
   border: none;
   border-radius: 999px;
   background: var(--tieto-yellow);

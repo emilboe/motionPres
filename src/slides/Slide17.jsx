@@ -86,6 +86,9 @@ export default function Slide17() {
   return (
     <section className="slide17">
       <div className="parallax" ref={parallaxRef}>
+        <div className="parallax__layer parallax__layer__title" data-speed="0.02">
+          <div className="parallax__title">Thats all folks</div>
+        </div>
         <div className="parallax__layer parallax__layer__0" data-speed="0.04">
           <img src={layer0} alt="Parallax layer 0" />
         </div>
@@ -107,7 +110,59 @@ export default function Slide17() {
         <div className="parallax__layer parallax__layer__6" data-speed="0.14">
           <img src={layer6} alt="Parallax layer 6" />
         </div>
-        <div className="parallax__cover">hallaisen</div>
+        <div className="parallax__cover">
+          <div className="parallax__cover-title">Inspirasjon</div>
+          <ul className="parallax__cover-links">
+            <li>
+              <a href="https://www.firewatchgame.com/" target="_blank" rel="noreferrer">
+                Firewatch
+              </a>
+            </li>
+            <li>
+              <a href="https://m2.material.io/design/motion/understanding-motion.html#principles" target="_blank" rel="noreferrer">
+                Material Design Motion
+              </a>
+            </li>
+            <li>
+              <a href="https://emilkowal.ski/ui/great-animations/" target="_blank" rel="noreferrer">
+                Great Animations - Emil Kowalski
+              </a>
+            </li>
+            <li>
+              <a href="https://animejs.com//" target="_blank" rel="noreferrer">
+                Anime.js
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://uxdesign.cc/transition-animations-a-practical-guide-5dba4d42f659"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Transition Animations Guide
+              </a>
+            </li>
+            <li>
+              <a href="https://60fps.design/" target="_blank" rel="noreferrer">
+                60fps.design
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.nngroup.com/articles/animation-purpose-ux/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                NN/g: The Role of Animation and Motion in UX
+              </a>
+            </li>
+            <li>
+              <a href="https://motion.dev/examples/" target="_blank" rel="noreferrer">
+                Motion.dev
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
   )

@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react'
+import veiviserRecording from '../assets/veiviser recording.mp4'
+import webmAccordion from '../assets/webmd-accordions.mov'
 import './Slide02.css'
 
 export default function Slide02() {
@@ -116,10 +118,10 @@ export default function Slide02() {
           className="slide02-modal-card"
           onClick={(event) => event.stopPropagation()}
         >
-          <div className="slide02-modal-title">Nice modal</div>
-          <p>
-            For en fin modal.
-          </p>
+          <div className="slide02-modal-media">
+            <video src={veiviserRecording} controls playsInline />
+            <video src={webmAccordion} controls playsInline />
+          </div>
           <button
             type="button"
             className="slide02-modal-close"
@@ -138,10 +140,10 @@ export default function Slide02() {
           className="slide02-modal-card"
           onClick={(event) => event.stopPropagation()}
         >
-          <div className="slide02-modal-title">Bad modal</div>
-          <p>
-            Denne dukker opp uten overgang.
-          </p>
+          <div className="slide02-modal-media">
+            <video src={veiviserRecording} controls playsInline />
+            <video src={webmAccordion} controls playsInline />
+          </div>
           <button
             type="button"
             className="slide02-modal-close"

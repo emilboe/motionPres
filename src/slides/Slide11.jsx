@@ -22,13 +22,13 @@ export default function Slide11() {
     },
     {
       id: 'ease-in',
-      label: 'Accelerate',
+      label: 'Ease In',
       desc: 'Speeds up',
       image: easeInImg
     },
     {
       id: 'ease-out',
-      label: 'Decelerate',
+      label: 'Ease Out',
       desc: 'Slows down',
       image: easeOutImg
     },

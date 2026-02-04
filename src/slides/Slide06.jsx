@@ -16,9 +16,18 @@ export default function Slide06() {
         </p>
       </div>
       <div className="slide06-media">
-        <img src={headspaceGif} alt="Headspace animation" />
-        <img src={errorGif} alt="Error animation" />
-        <img src={motionOnboardingGif} alt="Motion onboarding animation" />
+        <div className="slide06-item">
+          <img src={headspaceGif} alt="Headspace animation" />
+          <div className="slide06-source">Headspace</div>
+        </div>
+        <div className="slide06-item">
+          <img src={errorGif} alt="Error animation" />
+          <div className="slide06-source">Andrei Mironov</div>
+        </div>
+        <div className="slide06-item">
+          <img src={motionOnboardingGif} alt="Motion onboarding animation" />
+          <div className="slide06-source">Johny Vino</div>
+        </div>
       </div>
     </section>
   )

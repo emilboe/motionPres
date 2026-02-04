@@ -6,16 +6,18 @@ export default function SlideDeck({ slides }) {
   const [index, setIndex] = useState(0)
   const total = slides.length
   const CurrentSlide = slides[index]
+  const goPrev = () => setIndex((current) => Math.max(current - 1, 0))
+  const goNext = () => setIndex((current) => Math.min(current + 1, total - 1))
 
   useEffect(() => {
     const onKeyDown = (event) => {
       if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
         event.preventDefault()
-        setIndex((current) => Math.min(current + 1, total - 1))
+        goNext()
       }
       if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
         event.preventDefault()
-        setIndex((current) => Math.max(current - 1, 0))
+        goPrev()
       }
     }
 
@@ -30,7 +32,27 @@ export default function SlideDeck({ slides }) {
         <CurrentSlide />
       </div>
       <div className="deck-hint">
-        {index + 1} / {total}
+        <button
+          type="button"
+          className="deck-nav"
+          onClick={goPrev}
+          disabled={index === 0}
+          aria-label="Previous slide"
+        >
+          ‹
+        </button>
+        <span className="deck-count">
+          {index + 1} / {total}
+        </span>
+        <button
+          type="button"
+          className="deck-nav"
+          onClick={goNext}
+          disabled={index === total - 1}
+          aria-label="Next slide"
+        >
+          ›
+        </button>
       </div>
     </div>
   )

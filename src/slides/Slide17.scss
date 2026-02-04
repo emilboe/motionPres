@@ -1,4 +1,5 @@
 @use 'sass:math';
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&display=swap');
 .slide17 {
   position: fixed;
   inset: 0;
@@ -38,6 +39,25 @@
     }
   }
 
+  .parallax__layer__title {
+    z-index: 0;
+  }
+
+  .parallax__title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    font-family: 'Cinzel Decorative', 'Times New Roman', serif;
+    font-size: clamp(36px, 4.5vw, 72px);
+    color: var(--tieto-yellow);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+    pointer-events: none;
+    white-space: nowrap;
+  }
+
   .parallax__cover {
     position: absolute;
     top: 97%;
@@ -48,12 +68,39 @@
     background: #2d112b;
     color: var(--tieto-white-smoke);
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    padding-top: 12vh;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    justify-content: flex-start;
+    padding-top: 10vh;
+    font-size: 16px;
+    z-index: 2;
+  }
+
+  .parallax__cover-title {
     text-transform: uppercase;
     letter-spacing: 0.4em;
     font-size: 14px;
+  }
+
+  .parallax__cover-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 14px;
+    font-size: 18px;
+  }
+
+  .parallax__cover-links a {
+    color: var(--tieto-white-smoke);
+    text-decoration: none;
+    opacity: 0.9;
+  }
+
+  .parallax__cover-links a:hover {
+    opacity: 1;
+    text-decoration: underline;
   }
 }
 

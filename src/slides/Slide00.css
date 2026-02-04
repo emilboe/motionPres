@@ -5,3 +5,15 @@
 .slide00 .slide-subtitle {
   max-width: 920px;
 }
+
+.slide00-gifs {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.slide00-gif {
+  width: 360px;
+  height: auto;
+  border-radius: 16px;
+}

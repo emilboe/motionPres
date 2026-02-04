@@ -3,29 +3,32 @@ import './Slide08.css'
 export default function Slide08() {
   return (
     <section className="slide-layout slide08">
-      <div className="speaker-line">Timing basics.</div>
+      <div className="speaker-line">Timing og tempo.</div>
       <div className="slide-header">
         <h2 className="slide-title">Timing Basics</h2>
         <p className="slide-subtitle">
-          Varighet påvirker hvor raskt eller dramatisk en interaksjon føles.
+          Timing skal matche skala og intensjon.
         </p>
       </div>
       <div className="slide08-columns">
         <div className="slide08-block">
-          <h3>Short durations</h3>
+          <h3>Mikrointeraksjoner</h3>
           <p>
-            Think micro interactions like hover &amp; click states. Rule of
-            thumb, limit these types of interactions to 300ms max or else
-            perceived performance may suffer.
+            Hover og tap bør ligge under ~300 ms, ellers føles det tregt. Dette
+            handler om opplevd hastighet, ikke faktisk ytelse.
           </p>
         </div>
         <div className="slide08-block">
-          <h3>Long durations</h3>
+          <h3>Større bevegelser</h3>
           <p>
-            Typically used to create drama, or impact. Think screen-to-screen
-            transitions, or elements traversing large parts of a screen.
+            Modaler, hele skjermoverganger og paneler trenger lengre tid. Hvis
+            ikke føles de rykkete og harde.
           </p>
         </div>
+      </div>
+      <div className="slide08-loaders">
+        <div className="slide08-loader slow" aria-hidden="true" />
+        <div className="slide08-loader fast" aria-hidden="true" />
       </div>
     </section>
   )

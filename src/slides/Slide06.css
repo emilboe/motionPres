@@ -1,16 +1,13 @@
-.slide06-video {
-  border-radius: 16px;
-  overflow: hidden;
-  border: none;
-  background: transparent;
-  box-shadow: none;
+.slide06-media {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-.slide06-video video {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-height: 520px;
-  object-fit: contain;
+.slide06-media img {
+  height: 360px;
+  width: auto;
+  border-radius: 16px;
   background: transparent;
 }

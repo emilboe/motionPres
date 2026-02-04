@@ -1,4 +1,9 @@
 import { useLayoutEffect, useRef, useState } from 'react'
+import easeInImg from '../assets/ease/easein.png'
+import easeInOutImg from '../assets/ease/easeinout.png'
+import easeOutImg from '../assets/ease/easeout.png'
+import linearImg from '../assets/ease/linear.png'
+import springImg from '../assets/ease/spring.png'
 import logo from '../assets/tietologo.png'
 import './Slide11.css'
 
@@ -12,27 +17,32 @@ export default function Slide11() {
     {
       id: 'linear',
       label: 'Linear',
-      desc: 'Constant speed'
+      desc: 'Constant speed',
+      image: linearImg
     },
     {
       id: 'ease-in',
       label: 'Accelerate',
-      desc: 'Speeds up'
+      desc: 'Speeds up',
+      image: easeInImg
     },
     {
       id: 'ease-out',
       label: 'Decelerate',
-      desc: 'Slows down'
+      desc: 'Slows down',
+      image: easeOutImg
     },
     {
       id: 'ease-both',
       label: 'Ease Both',
-      desc: 'In + out'
+      desc: 'In + out',
+      image: easeInOutImg
     },
     {
       id: 'elastic',
       label: 'Elastic (Spring)',
-      desc: 'Playful bounce'
+      desc: 'Playful bounce',
+      image: springImg
     }
   ]
 
@@ -76,25 +86,7 @@ export default function Slide11() {
             onClick={() => play(curve.id)}
           >
             <div className="slide11-curve">
-              <span className="slide11-dot" />
-              <span className="slide11-dot slide11-dot--end" />
-              <svg viewBox="0 0 100 60" aria-hidden="true">
-                {curve.id === 'linear' && (
-                  <path d="M6 54 L 94 6" />
-                )}
-                {curve.id === 'ease-in' && (
-                  <path d="M6 54 C 40 54, 70 40, 94 6" />
-                )}
-                {curve.id === 'ease-out' && (
-                  <path d="M6 54 C 30 20, 60 6, 94 6" />
-                )}
-                {curve.id === 'ease-both' && (
-                  <path d="M6 54 C 30 54, 40 6, 94 6" />
-                )}
-                {curve.id === 'elastic' && (
-                  <path d="M6 54 C 40 10, 60 10, 70 30 S 90 50, 94 6" />
-                )}
-              </svg>
+              <img src={curve.image} alt={`${curve.label} curve`} />
             </div>
             <div className="slide11-card-title">{curve.label}</div>
             <div className="slide11-card-desc">{curve.desc}</div>

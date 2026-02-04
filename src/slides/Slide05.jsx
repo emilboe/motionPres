@@ -407,7 +407,7 @@ const SRC_DOC = String.raw`<!doctype html>
               <div class="title">Osteria Moderna</div>
               <div class="subtitle">Middag</div>
             </div>
-            <div class="amount" style="view-transition-name: amount-5">42.05 NOK</div>
+            <div class="amount" style="view-transition-name: amount-5">420.55 NOK</div>
           </div>
           <div class="transaction-details" style="view-transition-name: transaction-details-5">
             <div class="transaction-id">#52342</div>

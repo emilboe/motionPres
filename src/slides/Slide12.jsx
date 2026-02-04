@@ -108,9 +108,6 @@ export default function Slide12() {
               </div>
             </div>
           </div>
-          <div className="slide12-credit">
-            Linear fill (20s) synced to play
-          </div>
           <audio
             ref={audioRef}
             src={fireflies}
@@ -119,22 +116,6 @@ export default function Slide12() {
               setProgress(1)
             }}
           />
-        </div>
-        <div className="slide12-curve">
-          <div className="slide12-curve-card">
-            <div className="slide12-curve-title">Linear</div>
-            <div className="slide12-curve-box">
-              <span className="slide12-dot" />
-              <span className="slide12-dot slide12-dot--end" />
-              <svg viewBox="0 0 100 60" aria-hidden="true">
-                <path d="M6 54 L 94 6" />
-              </svg>
-            </div>
-            <div className="slide12-curve-desc">
-              Avoid linear easing unless animating objects that should move at
-              a constant rate (i.e. music playing).
-            </div>
-          </div>
         </div>
       </div>
     </section>

@@ -4,11 +4,11 @@ import './Slide07.css'
 export default function Slide07() {
   return (
     <section className="slide-layout slide07">
-      <div className="speaker-line">Interaction design anatomy.</div>
+      <div className="speaker-line">Interaksjonsanatomi.</div>
       <div className="slide-header">
-        <h2 className="slide-title">Interaction Design Anatomy</h2>
+        <h2 className="slide-title">Interaksjonsanatomi</h2>
         <p className="slide-subtitle">
-          Fire byggesteiner som former hver interaksjon i et grensesnitt.
+          Hver interaksjon består av fire komponenter.
         </p>
       </div>
       <div className="slide07-grid">
@@ -17,23 +17,23 @@ export default function Slide07() {
             <span className="slide07-icon">
               <MousePointer2 />
             </span>
-            Interaction Trigger
+            Trigger
           </div>
           <ul>
-            <li>What causes the animation</li>
-            <li>Mouse over, tap, swipe, scroll, page load</li>
+            <li>Det som starter den</li>
+            <li>Hover, trykk, swipe, scroll, pageload</li>
           </ul>
         </div>
         <div className="slide07-card">
-          <div className="slide07-card-title">
+          <h3 className="slide07-card-title">
             <span className="slide07-icon">
               <RotateCw />
             </span>
-            Response
-          </div>
+            Respons
+          </h3>
           <ul>
-            <li>What happens once triggered</li>
-            <li>Move, flip, fade, change color, grow/shrink</li>
+            <li>Hva som faktisk skjer</li>
+            <li>Flytting, fading, skalering, rotasjon</li>
           </ul>
         </div>
         <div className="slide07-card">
@@ -44,8 +44,8 @@ export default function Slide07() {
             Timing
           </div>
           <ul>
-            <li>Duration (how long it takes)</li>
-            <li>Delay (how long after trigger)</li>
+            <li>Hvor lenge ting varer</li>
+            <li>Forsinkelse som gir rytme</li>
           </ul>
         </div>
         <div className="slide07-card">
@@ -56,8 +56,8 @@ export default function Slide07() {
             Easing
           </div>
           <ul>
-            <li>The physics of the animation</li>
-            <li>Smoothness</li>
+            <li>Bevegelsens “fysikk”</li>
+            <li>Hvordan noe akselererer og bremser</li>
           </ul>
         </div>
       </div>

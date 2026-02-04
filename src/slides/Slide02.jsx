@@ -4,7 +4,10 @@ import './Slide02.css'
 export default function Slide02() {
   const [sendState, setSendState] = useState('idle')
   const [isLight, setIsLight] = useState(false)
-  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isGoodOpen, setIsGoodOpen] = useState(false)
+  const [isBadOpen, setIsBadOpen] = useState(false)
+  const [goodKey, setGoodKey] = useState(0)
+  const [badKey, setBadKey] = useState(0)
 
   useEffect(() => {
     if (sendState !== 'loading') return undefined
@@ -59,13 +62,28 @@ export default function Slide02() {
             <li>Kort som utvider seg til detaljer, panel fra riktig retning</li>
             <li>Ikke teleportering, men sammenheng</li>
           </ul>
-          <button
-            type="button"
-            className="slide02-modal-trigger button-33"
-            onClick={() => setIsModalOpen(true)}
-          >
-            Åpne panel
-          </button>
+          <div className="slide02-modal-actions">
+            <button
+              type="button"
+              className="slide02-modal-trigger button-33"
+              onClick={() => {
+                setGoodKey((value) => value + 1)
+                setIsGoodOpen(true)
+              }}
+            >
+              Åpne smooth
+            </button>
+            <button
+              type="button"
+              className="slide02-modal-trigger button-33 is-bad"
+              onClick={() => {
+                setBadKey((value) => value + 1)
+                setIsBadOpen(true)
+              }}
+            >
+              Åpne hard
+            </button>
+          </div>
         </div>
         <div className="slide02-column">
           <h3>Emosjonell motion</h3>
@@ -90,22 +108,44 @@ export default function Slide02() {
         </div>
       </div>
       <div
-        className={`slide02-modal ${isModalOpen ? 'is-open' : ''}`}
-        onClick={() => setIsModalOpen(false)}
+        className={`slide02-modal variant-a ${isGoodOpen ? 'is-open' : ''}`}
+        onClick={() => setIsGoodOpen(false)}
       >
         <div
+          key={goodKey}
           className="slide02-modal-card"
           onClick={(event) => event.stopPropagation()}
         >
-          <div className="slide02-modal-title">Detaljvisning</div>
+          <div className="slide02-modal-title">Nice modal</div>
           <p>
-            Her ser du en utdypning som glir inn og viser hvordan strukturen
-            henger sammen.
+            For en fin modal.
           </p>
           <button
             type="button"
             className="slide02-modal-close"
-            onClick={() => setIsModalOpen(false)}
+            onClick={() => setIsGoodOpen(false)}
+          >
+            Lukk
+          </button>
+        </div>
+      </div>
+      <div
+        className={`slide02-modal variant-b ${isBadOpen ? 'is-open' : ''}`}
+        onClick={() => setIsBadOpen(false)}
+      >
+        <div
+          key={badKey}
+          className="slide02-modal-card"
+          onClick={(event) => event.stopPropagation()}
+        >
+          <div className="slide02-modal-title">Bad modal</div>
+          <p>
+            Denne dukker opp uten overgang.
+          </p>
+          <button
+            type="button"
+            className="slide02-modal-close"
+            onClick={() => setIsBadOpen(false)}
           >
             Lukk
           </button>

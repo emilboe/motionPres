@@ -18,14 +18,15 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 8px;
+  font-size: 28px;
 }
 
 .slide07-icon {
   display: inline-flex;
-  width: 34px;
-  height: 34px;
+  width: 48px;
+  height: 48px;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
@@ -34,8 +35,8 @@
 }
 
 .slide07-icon svg {
-  width: 18px;
-  height: 18px;
+  width: 26px;
+  height: 26px;
 }
 
 .slide07-card ul {
@@ -44,14 +45,22 @@
   margin: 0;
   color: rgba(255, 255, 255, 0.7);
   display: grid;
-  gap: 6px;
-  font-size: 14px;
+  gap: 10px;
+  font-size: 22px;
 }
 
 .slide07-card li::before {
   content: '•';
   margin-right: 8px;
   color: var(--tieto-yellow);
+}
+
+.slide07-note {
+  max-width: 900px;
+  color: var(--tieto-white-smoke);
+  opacity: 0.85;
+  font-size: 18px;
+  line-height: 1.5;
 }
 
 @media (max-width: 900px) {

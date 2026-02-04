@@ -7,8 +7,6 @@ import Slide05 from './slides/Slide05.jsx'
 import Slide06 from './slides/Slide06.jsx'
 import Slide07 from './slides/Slide07.jsx'
 import Slide08 from './slides/Slide08.jsx'
-import Slide09 from './slides/Slide09.jsx'
-import Slide10 from './slides/Slide10.jsx'
 import Slide11 from './slides/Slide11.jsx'
 import Slide12 from './slides/Slide12.jsx'
 import Slide13 from './slides/Slide13.jsx'
@@ -26,8 +24,6 @@ const slides = [
   Slide06,
   Slide07,
   Slide08,
-  Slide09,
-  Slide10,
   Slide11,
   Slide12,
   Slide13,
